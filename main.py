@@ -1,6 +1,7 @@
-import aaaaa.bbb.fun1st as f1
+import module.first.fun1st as f1
 
-# page 3
+
+# page 3 -- dictionary {key : value}
 quotes = {
 "Moe": "A wiseguy, huh?",
 "Larry": "Ow!",
@@ -12,3 +13,4 @@ print(stooge, "says:", quotes[stooge])
 
 
 f1.fun1()
+f1.fun2()
