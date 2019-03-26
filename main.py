@@ -1,4 +1,5 @@
 import module.first.fun1st as f1
+import module.Chapter2.c2 as c2
 
 
 # page 3 -- dictionary {key : value}
@@ -13,4 +14,12 @@ print(stooge, "says:", quotes[stooge])
 
 
 f1.fun1()
-f1.fun2()
+#f1.fun2()
+
+c2.introduction()
+c2.test_operator()
+c2.test_base()
+c2.test_str()
+c2.test_characters()
+c2.test_split_join()
+c2.test_str_long()
