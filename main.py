@@ -1,5 +1,6 @@
 import module.first.fun1st as f1
 import module.Chapter2.c2 as c2
+import module.Chapter3.c3 as c3
 
 
 # page 3 -- dictionary {key : value}
@@ -23,3 +24,8 @@ c2.test_str()
 c2.test_characters()
 c2.test_split_join()
 c2.test_str_long()
+c2.test_align()
+c2.test_replace()
+
+
+c3.introduction()

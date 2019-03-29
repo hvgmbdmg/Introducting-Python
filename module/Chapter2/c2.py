@@ -94,7 +94,29 @@ But 'tis the wet that makes it die, no doubt.'''
 	function_end()
 
 def test_align():
-	
+	print("align".title().center(50)+'\n'+'-'*50)
+
+	setup = '.a duck goes into a bar...'
+	print("Remove . sequences from both ends")
+	print("Origin:", setup)
+	print("setup.strip('.'):", setup.strip('.'))
+	print("setup.title() :", setup.title() )
+	print("setup.upper() :", setup.upper() )
+	print("setup.lower() :", setup.lower() )
+	print("setup.swapcase() :", setup.swapcase() )
+	print("setup.center(30):"+setup.center(30) )
+	print("setup.ljust(30) :"+setup.ljust(30) )
+	print("setup.rjust(30) :"+setup.rjust(30) )
+	function_end()
+
+def test_replace():
+	print("replace".title().center(50)+'\n'+'-'*50)
+	setup = 'a duck goes into a bar...' 
+	print("replace:", setup.replace('duck', 'marmoset'))
+	print("replace(,,1):", setup.replace('a ', 'a famous ', 1) )
+	print("replace(,,2):", setup.replace('a ', 'a famous ', 2) ) # replace variable 3 means replace max times
+	print("replace(,,100):", setup.replace('a ', 'a famous ', 100) )
+	function_end()
 
 
 def special():
