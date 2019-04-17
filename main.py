@@ -6,7 +6,7 @@ import module.Chapter3.c3 as c3
 from module.Chapter8 import c8
 from module.common import common as c
 
-from module.TestCopy import Holly
+from module.TestCopy import holly
 
 from twstock import Stock
 import pathlib
@@ -16,18 +16,21 @@ import datetime
 
 # page 3 -- dictionary {key : value}
 quotes = {
-"Moe": "A wiseguy, huh?",
-"Larry": "Ow!",
-"Curly": "Nyuk nyuk!"
+    "Moe": "A wiseguy, huh?",
+    "Larry": "Ow!",
+    "Curly": "Nyuk nyuk!"
 }
 
+#twstock.__update_codes()
+
+'''
 stooge = "Curly"
 print(stooge, "says:", quotes[stooge])
 
 stock = Stock('2371')
 # print(twstock.codes)
+twstock.__update_codes()
 
-'''
 time.sleep(2)
 stock.fetch(2015, 1)
 for index in range(len(stock.data)):
@@ -42,25 +45,15 @@ print(type(stock.data[0][0]))
 D = datetime.datetime.strptime(A, '%Y-%m-%d %H:%M:%S')
 print(D)
 print(type(D))
+'''
 
+'''
 import pathlib
 # from pathlib import Path
 tick_file = pathlib.Path(path_clean + '\Clean_Tick_' + str(year).zfill(4) + '_' + str(month).zfill(2) + '_' + str(day).zfill(2) + '.csv')
 
-# Date, capacity, turnover, open, high, low, close, change, transaction
-# DateTime String: %Y, %M, %D, %H, %M, %S
-# this stock file already exist, so need to append.
-if (tick_file.exist()):
 	cleanTick = pd.read_csv(tick_file, encoding='big5', sep=r",")
-	> last date
-
 	cleanTick.to_csv('my_csv.csv', mode='a', header=False)
-
-else:
-	# check data is not empty
-	if :
-
-	else:
 '''
 
 
@@ -86,19 +79,9 @@ c8.test_write()
 
 print(c.stock_data_folder_path)
 
-code = 2030
+code = 2867
+# holly.test_load_historical_data(code, 2008, 10, 2008, 10)
+# holly.test_load_historical_data_gradually(2031, c.first_year, c.second_year)
 
-folder_path = pathlib.Path(c.stock_data_folder_path)
-folder_path.mkdir(parents=True, exist_ok=True)
-filename = folder_path / (str(code)+'.csv')
-
-
-print(filename.exists())
-new_data = Holly.test_temp(code)
-# Holly.test_load_historical_data()
-
-title = ["Date", "Capacity", "Turnover", "Open", "High", "Low", "Close", "Change", "Transaction"]
-with open( fileName, 'w+', newline='') as csvfile:
-	writer = csv.writer(csvfile)
-	writer.writerow(title)
-	writer.writerows(new_data)
+# holly.test_load_historical_data_gradually(2867, 2000, 2018)
+holly.test_load_historical_data_gradually(2867, 2011, 2018)
