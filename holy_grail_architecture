@@ -1,0 +1,25 @@
+holy_grail/
+|-- holy_grail/
+|   |-- module/
+|	|	|-- securities/
+|	|	|	|-- load_historical.py
+|	|	|
+|	|	|-- capital_securities/
+|	|	|	|-- test_capital_api.py
+|
+|-- data/
+|   |-- test/
+|   |   |-- __init__.py
+|   |   |-- test_main.py
+|   |   
+|   |-- __init__.py
+|   |-- main.py
+|
+|-- test/
+|
+|-- example/
+|
+|-- .gitignore
+|-- holy_grail.sln
+|-- setup.py
+|-- README.md

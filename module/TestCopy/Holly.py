@@ -223,9 +223,10 @@ def test_remove_duplicate_data(code, data_list):
     """
     unique_data_list = []
     date_str = test_get_local_date_last_date(code)
-    for index in range(len(data_list)):
-        if data_list[index][0] > date_str:
-            unique_data_list.append(data_list[index])
+    for item in data_list:
+        if item[0] > date_str:
+            unique_data_list.append(item)
+
     return unique_data_list
 
 
