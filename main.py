@@ -21,7 +21,6 @@ quotes = {
     "Curly": "Nyuk nyuk!"
 }
 
-#twstock.__update_codes()
 
 '''
 stooge = "Curly"
@@ -79,9 +78,13 @@ c8.test_write()
 
 print(c.stock_data_folder_path)
 
-code = 2867
-holly.test_load_historical_data(code, 2018, 10, 2019, 4)
+# code = 2867
+# holly.test_load_historical_data(code, 2018, 10, 2019, 4)
 # holly.test_load_historical_data_gradually(2031, c.first_year, c.second_year)
 
 # holly.test_load_historical_data_gradually(2867, 2000, 2018)
 # holly.test_load_historical_data_gradually(2867, 2011, 2018)
+
+for item in c.securities_20MA:
+	holly.test_load_historical_data_gradually(item, c.first_year, c.second_year)
+

@@ -5,7 +5,7 @@ Docstring
 TODO List
 ----------
 1. Add new function to check local data file format.
-2. Add new function to
+2. Add new function to load before data and insert to correct position
 """
 import csv
 import time

@@ -1,21 +1,55 @@
+# https://stackoverflow.com/questions/193161/what-is-the-best-project-structure-for-a-python-application
+# https://realpython.com/python-application-layouts/
+
 holy_grail/
 |-- holy_grail/
-|   |-- module/
+|	|-- module/
 |	|	|-- securities/
 |	|	|	|-- load_historical.py
+|	|	|	|-- config.py
 |	|	|
 |	|	|-- capital_securities/
 |	|	|	|-- test_capital_api.py
+|	|	|	|-- config.py
+|	|	|
+|	|
 |
-|-- data/
-|   |-- test/
-|   |   |-- __init__.py
-|   |   |-- test_main.py
-|   |   
-|   |-- __init__.py
-|   |-- main.py
+|-- dataset/
+|   |-- securities/
+|	|	|-- raw_data/
+|	|	|	|-- 1001.csv
+|	|	|	|-- 1002.csv
+|	|	|	|-- ...
+|	|	|	|-- 9999.csv
+|	|	|
+|	|	|-- precise_data/
+|	|	|	|-- 1001.csv
+|	|	|	|-- ...
+|	|	|	|-- 9999.csv
+|	|	|
+|   |   |-- clean_data/
+|	|	|	|-- XXXX.csv
+|	|	|
+|	|
+|   |-- index/
+|	|	|-- raw_data/
+|	|	|
+|	|
+|   |-- capital_api/
+|	|	|-- raw_data/
+|	|	|	|-- capital_tick_2019_XX_XX.csv
+|	|	|	|-- capital_tick_info_2019_XX_XX.csv
+|	|	|
+|	|	|-- clean_minutely/
+|	|	|	|-- clean_capital_tick_2019_XX_XX.csv
+|	|	|	|-- clean_capital_tick_info_2019_XX_XX.csv
+|	|	|
+|	|
+|	|-- mysterious_pyramid/
 |
 |-- test/
+|	|-- __init__.py
+|  	|-- test_main.py
 |
 |-- example/
 |
@@ -23,3 +57,40 @@ holy_grail/
 |-- holy_grail.sln
 |-- setup.py
 |-- README.md
+
+
+
+
+
+project/
+│
+├── app/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   │
+│   ├── migrations/
+│   │   └── __init__.py
+│   │
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+│
+├── docs/
+│
+├── project/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+├── static/
+│   └── style.css
+│
+├── templates/
+│   └── base.html
+│
+├── .gitignore
+├── manage.py
+├── LICENSE
+└── README.md
