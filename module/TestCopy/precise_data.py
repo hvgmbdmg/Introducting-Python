@@ -6,6 +6,30 @@ TODO List
 ----------
 1. 計算增減資 + 配股/息
 """
+import pandas as pd
+
+def read_csv_to_pandas(code):
+	"""
+    Goal
+    ----------
+    Gradually download historical data.
+
+    Parameters
+    ----------
+    code : int or str
+    begin_year : int
+    end_year : int
+
+    Return
+    ----------
+    security_df : pandas.core.frame.DataFrame
+    """
+    folder_path = pathlib.Path(c.stock_data_folder_path)
+    filename = str(code)+'.csv'
+    file_path = folder_path / filename
+    security_df = pd.read_csv(file_path) # class 'pandas.core.frame.DataFrame'
+
+    return security_df
 
 
 def cal_reasonable(last_close, refund, distribute_equity, capital_reduce):
@@ -26,14 +50,36 @@ def cal_reasonable(last_close, refund, distribute_equity, capital_reduce):
     reasonable_price = (last_close-refund) / (1+distribute_equity/10)
     equity = 1+distribute_equity/10;
 
-'''
+	'''
     if capital_reduce != 0:
     	...
     	...
 
-''' 
+	''' 
     return [reasonable_price, equity, refund]
 
+
+def simple_moving_average(txdf, period):
+
+	newColumn = str(period) + "MA"
+    txdf[newColumn] = txdf["Close"].rolling(period).mean()
+
+
+"""
+可嘗試交易量加權移動平均
+"""
+def weighted_moving_average(txdf, period):
+	newColumn = str(period) + "WMA"
+	txdf['weighted_close'] = txdf['Close']*txdf['Turnover']
+	txdf['weighted_count'] = txdf["weighted_close"].rolling(period).mean()
+	txdf['Turnover_count'] = txdf["Turnover"].rolling(period).mean()
+    txdf[newColumn] = txdf['weighted_count']/txdf['Turnover_count']
+
+	# del txdf['weighted_close']
+	# del txdf['weighted_count']
+	# del txdf['Turnover_count']
+
+# def exponential_moving_average():
 
 # 減資後的股價=(減資前最後交易日收盤價－每股退還金額）/（減資後資本額/原資本額）
 
@@ -168,4 +214,18 @@ Accounts Receivable -應收帳款
 Inventories -存貨
 Long-term Investments- 長期投資
 Net PP&E -不動產、廠房及設備 
+'''
+
+
+'''
+https://stackoverflow.com/questions/3430372/how-to-get-full-path-of-current-files-directory-in-python
+If you mean the directory of the script being run:
+
+import os
+os.path.dirname(os.path.abspath(__file__))
+
+If you mean the current working directory:
+
+import os
+os.getcwd()
 '''

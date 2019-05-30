@@ -85,6 +85,13 @@ print(c.stock_data_folder_path)
 # holly.test_load_historical_data_gradually(2867, 2000, 2018)
 # holly.test_load_historical_data_gradually(2867, 2011, 2018)
 
+'''
 for item in c.securities_20MA:
 	holly.test_load_historical_data_gradually(item, c.first_year, c.second_year)
+'''
 
+from FinMind.Data import Load
+TaiwanStockInfo = Load.FinData(dataset = 'TaiwanStockInfo')
+data = Load.FinData(dataset = 'TaiwanStockPrice',select = ['2425'],date = '2017-10-10')
+# data = Load.FinData(dataset = 'TaiwanStockStockDividend',select = ['2425'],date = '2017-10-10')
+print(data)
