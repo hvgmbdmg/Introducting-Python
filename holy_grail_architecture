@@ -4,8 +4,15 @@
 holy_grail/
 |-- holy_grail/
 |	|-- module/
+|	|	|-- strategy/
+|	|	|	|-- close_20MA.py
+|	|	|	|-- turnover_burst.py
+|	|	|	|-- turnover_cool_down.py
+|	|	|
 |	|	|-- securities/
 |	|	|	|-- load_historical.py
+|	|	|	|-- precise.py
+|	|	|	|-- 
 |	|	|	|-- config.py
 |	|	|
 |	|	|-- capital_securities/
@@ -15,7 +22,7 @@ holy_grail/
 |	|
 |
 |-- dataset/
-|   |-- securities/
+|	|-- securities/ 		#-- first
 |	|	|-- raw_data/
 |	|	|	|-- 1001.csv
 |	|	|	|-- 1002.csv
@@ -27,15 +34,15 @@ holy_grail/
 |	|	|	|-- ...
 |	|	|	|-- 9999.csv
 |	|	|
-|   |   |-- clean_data/
+|	|	|-- clean_data/
 |	|	|	|-- XXXX.csv
 |	|	|
 |	|
-|   |-- index/
+|	|-- index/ 				# from txse
 |	|	|-- raw_data/
-|	|	|
+|	|	|	|-- YYYYMMDD.csv
 |	|
-|   |-- capital_api/
+|	|-- capital_api/
 |	|	|-- raw_data/
 |	|	|	|-- capital_tick_2019_XX_XX.csv
 |	|	|	|-- capital_tick_info_2019_XX_XX.csv
@@ -49,9 +56,10 @@ holy_grail/
 |
 |-- test/
 |	|-- __init__.py
-|  	|-- test_main.py
+|	|-- test_main.py
 |
 |-- example/
+|	|-- basic_sample.py
 |
 |-- .gitignore
 |-- holy_grail.sln
